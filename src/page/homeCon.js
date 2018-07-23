@@ -2,12 +2,11 @@ import { Layout, Menu, Icon } from 'antd';
 import React,{Component} from 'react'
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom'
-import About from './about'
-import Help from './help'
-import HomeCon from './homeCon'
+import About from '../page/about'
+import Help from '../page/help'
 import common from '../assets/style/common.less'
 const { Header, Sider, Content } = Layout;
-class home extends Component{
+class HomeCon extends Component{
     state = {
         collapsed: false,
     };
@@ -52,7 +51,7 @@ class home extends Component{
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
                        <Switch>
-                           <Route key='1' exact='true' path="/" component={HomeCon}/>
+                           <Route key='1' exact='true' path="/home" component={HomeCon}/>
                            <Route key='2' exact='true' path="/about" component={About}/>
                            <Route key='3' exact='true' path="/help" component={Help}/>
                        </Switch>
@@ -62,4 +61,4 @@ class home extends Component{
         );
     }
 }
-export default home;
+export default HomeCon;

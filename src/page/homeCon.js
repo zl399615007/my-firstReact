@@ -41,22 +41,6 @@ class HomeCon extends Component{
                         </Menu.Item>
                     </Menu>
                 </Sider>
-                <Layout>
-                    <Header style={{ background: '#fff', padding: 0 }}>
-                        <Icon
-                            className="trigger"
-                            type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.toggle}
-                        />
-                    </Header>
-                    <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-                       <Switch>
-                           <Route key='1' exact='true' path="/home" component={HomeCon}/>
-                           <Route key='2' exact='true' path="/about" component={About}/>
-                           <Route key='3' exact='true' path="/help" component={Help}/>
-                       </Switch>
-                    </Content>
-                </Layout>
             </Layout>
         );
     }

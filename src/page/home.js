@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom'
 import About from './about'
 import Help from './help'
 import HomeCon from './homeCon'
-import common from '../assets/style/common.less'
+import Next from './next'
+import { Provider } from 'react-redux'
+import store from '../redux/store'
 const { Header, Sider, Content } = Layout;
 class home extends Component{
     state = {
@@ -51,11 +53,14 @@ class home extends Component{
                         />
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-                       <Switch>
-                           <Route key='1' exact='true' path="/" component={HomeCon}/>
-                           <Route key='2' exact='true' path="/about" component={About}/>
-                           <Route key='3' exact='true' path="/help" component={Help}/>
-                       </Switch>
+                        <Provider store={store}>
+                           <Switch>
+                               <Route key='1' exact={true} path="/" component={HomeCon}/>
+                               <Route key='2' exact={true} path="/about" component={About}/>
+                               <Route key='3' exact={true} path="/help" component={Help}/>
+                               <Route key='4' exact={true} path="/next" component={Next}/>
+                           </Switch>
+                        </Provider>
                     </Content>
                 </Layout>
             </Layout>

@@ -2,12 +2,9 @@ import { Layout, Menu, Icon } from 'antd';
 import React,{Component} from 'react'
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom'
-import About from './about'
-import Help from './help'
-import HomeCon from './homeCon'
-import Next from './next'
 import { Provider } from 'react-redux'
 import store from '../redux/store'
+import Routes from '../routes/routes'
 const { Header, Sider, Content } = Layout;
 class home extends Component{
     state = {
@@ -30,17 +27,24 @@ class home extends Component{
                 >
                     <div className="logo" />
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+
                         <Menu.Item key="1">
-                            <Icon type="user" />
-                            <span><Link to="/">home</Link></span>
+                            <Link to="/">
+                                <Icon type="user" />
+                                <span>home</span>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="2">
-                            <Icon type="video-camera" />
-                            <span><Link to="/help">help</Link></span>
+                            <Link to="/help">
+                                <Icon type="video-camera" />
+                                <span>help</span>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="3">
-                            <Icon type="upload" />
-                            <span><Link to="/about">about</Link></span>
+                            <Link to="/about">
+                                <Icon type="upload" />
+                                <span>about</span>
+                            </Link>
                         </Menu.Item>
                     </Menu>
                 </Sider>
@@ -54,12 +58,7 @@ class home extends Component{
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
                         <Provider store={store}>
-                           <Switch>
-                               <Route key='1' exact={true} path="/" component={HomeCon}/>
-                               <Route key='2' exact={true} path="/about" component={About}/>
-                               <Route key='3' exact={true} path="/help" component={Help}/>
-                               <Route key='4' exact={true} path="/next" component={Next}/>
-                           </Switch>
+                            <Routes/>
                         </Provider>
                     </Content>
                 </Layout>

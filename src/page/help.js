@@ -1,9 +1,6 @@
 import React,{Component} from 'react'
 import PropTypes from 'prop-types'
-import ReactDOM from 'react-dom'
-
 import increaseAction from '../redux/action'
-import store from '../redux/store'
 import { connect } from 'react-redux'
 class Counter extends Component {
     render() {

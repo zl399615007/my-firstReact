@@ -8,14 +8,18 @@ class FilterBtn extends React.Component{
             value:this.props.filterOption[0].value,
             name:this.props.filterOption[0].name,
         };
-        console.log(this.props.filterOption)
+
     }
     handleChange = (value,name) => {
-        this.setState({
+       /* this.setState({
             value:value,
             name:name.props.children
-        });
-
+        });*/
+       let obj={
+           value:value,
+           name:name.props.children
+       }
+       this.props.changeOption(obj)
     }
     render(){
         const Option = Select.Option;

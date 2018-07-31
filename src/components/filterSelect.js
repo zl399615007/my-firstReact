@@ -8,28 +8,36 @@ class FilterSelect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            code: '',
-            name: '不限',
+            nolimit:true,
+            select:{
+                code:'',
+                name:''
+            }
         };
-        console.log(this.props.filterOption)
     }
-    btnNolimit1Section(filterType){//学段、学科、历史用途不限按钮点击
-        let _this=this;
+    isactive(){
 
     }
-    btnFilterType(filterType){
-
+    btnFilterType(code,name){
+        let obj={
+            code:code,
+            name:name
+        }
+        this.props.changeOption(obj)
+        console.log(code)
     }
     render() {
         let spanState=classNames({
             'filter-tag':true,
             'active':true
         })
-        const list=this.props.filterOption.map((item,index)=> {return <li key={item.code+''+index}><span  className="filter-tag" onClick={this.btnFilterType(item,index,'studySection')}>{item.name}</span></li>})
+        const list=this.props.filterOption.map((item,index)=> {return <li key={item.code+''+index}><span  className="filter-tag" onClick={()=>{
+            this.btnFilterType(item.code,item.name)
+        }}>{item.name}</span></li>})
         return (
             <div className='filter-item'>
                 <ul>
-                    <li><span  className={spanState} onClick={this.btnNolimit1Section('historicalUse')}>不限</span></li>
+                    <li><span  className={spanState} onClick={()=>this.btnFilterType('','不限')}>不限</span></li>
                     {list}
                 </ul>
             </div>

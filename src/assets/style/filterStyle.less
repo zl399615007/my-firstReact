@@ -1,0 +1,82 @@
+@import "./mixin";
+.filter-item{
+    height: 44px;
+    line-height: 44px;
+    span.filter-tit{
+        float: left;
+        height: 100%;
+        min-width: 100px;
+        color: @abadb4;
+        .f12;
+    }
+    ul{
+        float: left;
+        /*height: 100%;*/
+        li{
+            &:last-of-type{
+                margin-right: 0;
+            }
+            float: left;
+            cursor: pointer;
+            margin-right: 10px;
+            .f12;
+            color: @color;
+            padding: 10px 0px;
+            height: 24px;
+            line-height: 24px;
+            span.filter-tag {
+
+                display: inline-block;
+                height: 24px;
+                -webkit-user-select: none;
+                &.active{
+                    background: #fff;
+                    box-shadow: 1px 1px 4px -1px rgba(43,41,40,0.4);
+                }
+                padding: 0 30px;
+
+            }
+            .testNum{
+                label{
+                    color: @abadb4;
+                    height: 100%;
+                    float: left;
+                    margin-right: 30px;
+                }
+                .testNum-input{
+                    float: left;
+                    margin-right: 25px;
+
+                    /*input{*/
+                    /*float: left;*/
+                    /*height: 24px;*/
+                    /*width: 90px;*/
+                    /*border-radius: 2px;*/
+                    /*box-sizing: border-box;*/
+                    /*padding: 0 12px;*/
+                    /*}*/
+                    span{
+                        float: left;
+                        height: 100%;
+                        width: 40px;
+                        text-align: center;
+                        color: @abadb4;
+                    }
+                }
+
+            }
+
+        }
+        .z-select{
+            padding-right: 30px;
+            margin-right: 0;
+        }
+    }
+    .filter-btn{
+        margin-left: 12px;
+        float: right;
+        .notallow{
+            cursor: not-allowed;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from 'antd';
 import PropTypes from 'prop-types'
-class SelectFilter extends React.Component{
+class FilterBtn extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -33,9 +33,7 @@ class SelectFilter extends React.Component{
     }
 
 }
-SelectFilter.propTypes={
+FilterBtn.propTypes={
     filterOption:PropTypes.array.isRequired
 }
-export {
-    SelectFilter
-}
+export default FilterBtn

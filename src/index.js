@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router';
+import { Router,Route,HashRouter} from 'react-router-dom';
 import history from './history';
-import Home from './page/home'
+import App from './APP'
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux'
+import store from './redux/store'
 ReactDOM.render(
-        <Router history={history}>
-           <Home/>
-        </Router>,document.getElementById('root')
+    <Provider store={store}>
+        <HashRouter history={history}>
+           <App/>
+        </HashRouter>
+    </Provider>
+        ,document.getElementById('root')
 );
 registerServiceWorker();

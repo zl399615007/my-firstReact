@@ -1,10 +1,12 @@
 import { Layout, Menu, Icon } from 'antd';
 import React,{Component} from 'react'
 import { Link } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import store from '../redux/store'
-import Routes from '../routes/routes'
 import createHistory from 'history/createBrowserHistory';
+import { Switch, Route ,Router} from 'react-router';
+import About from '../page/about'
+import Help from '../page/help'
+import HomeCon from '../page/homeCon'
+import Next from '../page/next'
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
 
@@ -83,9 +85,14 @@ class home extends Component{
                         />
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-                        <Provider store={store}>
-                            <Routes/>
-                        </Provider>
+                        <Switch>
+                        <Route key='1'  path="/home" component={HomeCon}/>
+                        <Route key='2'  path="/about" component={About}/>
+                        <Route key='3'  path="/help" component={Help}/>
+                        <Route key='4'  path="/next" component={Next}/>
+                        <Route key='5'  path="/option5" component={Next}/>
+                        <Route key='6'  path="/option6" component={Next}/>
+                        </Switch>
                     </Content>
                 </Layout>
             </Layout>

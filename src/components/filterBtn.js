@@ -38,6 +38,7 @@ class FilterBtn extends React.Component{
 
 }
 FilterBtn.propTypes={
-    filterOption:PropTypes.array.isRequired
+    filterOption:PropTypes.array.isRequired,
+    changeOption:PropTypes.func.isRequired
 }
 export default FilterBtn

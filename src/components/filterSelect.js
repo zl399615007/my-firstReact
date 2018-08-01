@@ -4,7 +4,6 @@ import '../assets/style/common.less'
 import '../assets/style/mixin.less'
 import '../assets/style/filterStyle.less'
 var classNames = require('classnames');
-
 class FilterSelect extends React.Component {
     constructor(props) {
         super(props);
@@ -39,6 +38,7 @@ class FilterSelect extends React.Component {
                     <li><span  className={['filter-tag',this.classState.nolimit && 'active'].join(' ')} onClick={()=>this.btnFilterType('','不限')}>不限</span></li>
                     {list}
                 </ul>
+
             </div>
         )
 
@@ -46,6 +46,7 @@ class FilterSelect extends React.Component {
     }
 }
 FilterSelect.propTypes={
-    filterOption:PropTypes.array.isRequired
+    filterOption:PropTypes.array.isRequired,
+    changeOption:PropTypes.func.isRequired,
 }
 export default FilterSelect

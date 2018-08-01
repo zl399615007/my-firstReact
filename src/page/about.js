@@ -1,8 +1,52 @@
 import React,{Component} from 'react'
-import { Button } from 'antd';
-import { Link } from 'react-router-dom'
+import { Button,Table, Icon, Divider } from 'antd';
 import FilterBtn from '../components/filterBtn'
 import FilterSelect from '../components/filterSelect'
+const columns = [{
+    title: 'Name',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a href="javascript:;">{text}</a>,
+}, {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+}, {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
+}, {
+    title: 'Action',
+    key: 'action',
+    render: (text, record) => (
+        <span>
+      <a href="javascript:;">Action 一 {record.name}</a>
+      <Divider type="vertical" />
+      <a href="javascript:;">Delete</a>
+      <Divider type="vertical" />
+      <a href="javascript:;" className="ant-dropdown-link">
+        More actions <Icon type="down" />
+      </a>
+    </span>
+    ),
+}];
+
+const listdata = [{
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+}, {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+}, {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+}];
 class about extends Component{
     constructor(props){
         super(props);
@@ -29,6 +73,7 @@ class about extends Component{
 
    }
     render(){
+
         const filterOption1=[{  value:0, name:'全部' },{ value:1, name:'有效'},{ value:2, name:'无效' }]
         const filterOption2=[{ value:1, name:'春'},{ value:2, name:'秋' }]
         const filterOption3=[{ code:'primary_school', name:'小学'},{ code:'middle_school', name:'初中' },{ code:'high_school', name:'高中' }]
@@ -45,7 +90,7 @@ class about extends Component{
                 <FilterBtn filterOption={filterOption2} changeOption={(state,option)=>this.changeOption(state,'Option2')}></FilterBtn>
                 <FilterSelect filterOption={filterOption3} changeOption={(state,option)=>this.changeOption(state,'Option3')}></FilterSelect>
                 <FilterSelect filterOption={filterOption4} changeOption={(state,option)=>this.changeOption(state,'Option3')}></FilterSelect>
-
+                <Table dataSource={listdata} columns={columns} />
             </div>
         )
     }

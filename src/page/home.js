@@ -2,7 +2,7 @@ import { Layout, Menu, Icon } from 'antd';
 import React,{Component} from 'react'
 import { Link } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory';
-import { Switch, Route ,Router} from 'react-router';
+import { Switch, Route } from 'react-router';
 import About from '../page/about'
 import Help from '../page/help'
 import HomeCon from '../page/homeCon'
@@ -92,6 +92,7 @@ class home extends Component{
                         <Route key='4'  path="/next" component={Next}/>
                         <Route key='5'  path="/option5" component={Next}/>
                         <Route key='6'  path="/option6" component={Next}/>
+                        <Route   path="/" component={HomeCon}/>
                         </Switch>
                     </Content>
                 </Layout>

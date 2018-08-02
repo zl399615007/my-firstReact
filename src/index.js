@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router,Route,HashRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import history from './history';
 import App from './APP'
 import registerServiceWorker from './registerServiceWorker';

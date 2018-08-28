@@ -12,24 +12,18 @@ const SubMenu = Menu.SubMenu;
 
 const history = createHistory();
 class home extends Component{
-    constructor(props){
-        super(props);
-
-    }
     state = {
         collapsed: false,
     };
-
     toggle = () => {
         this.setState({
             collapsed: !this.state.collapsed,
         });
     }
-
     render() {
         const query=history.location.pathname.split('/')[1];
         let openkeys='';
-       if(query=='option5'||query=='option6'){
+       if(query==='option5'||query==='option6'){
            openkeys='sub1'
        }
         return (

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Router,Route,Switch} from 'react-router';
-import history from './history';
+import {Route,Switch} from 'react-router';
 import Home from './page/home'
 import Login from './page/login';
 

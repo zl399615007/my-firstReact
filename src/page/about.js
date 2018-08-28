@@ -1,12 +1,12 @@
 import React,{Component} from 'react'
-import { Button,Table, Icon, Divider } from 'antd';
+import {Table, Icon, Divider } from 'antd';
 import FilterBtn from '../components/filterBtn'
 import FilterSelect from '../components/filterSelect'
 const columns = [{
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a href="javascript:;">{text}</a>,
+    render: text => <span>{text}</span>,
 }, {
     title: 'Age',
     dataIndex: 'age',
@@ -20,13 +20,13 @@ const columns = [{
     key: 'action',
     render: (text, record) => (
         <span>
-      <a href="javascript:;">Action 一 {record.name}</a>
+      <span>Action 一 {record.name}</span>
       <Divider type="vertical" />
-      <a href="javascript:;">Delete</a>
+      <span >Delete</span>
       <Divider type="vertical" />
-      <a href="javascript:;" className="ant-dropdown-link">
+      <span className="ant-dropdown-link">
         More actions <Icon type="down" />
-      </a>
+      </span>
     </span>
     ),
 }];

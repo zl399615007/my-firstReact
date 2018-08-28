@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import '../assets/style/common.less'
 import '../assets/style/mixin.less'
 import '../assets/style/filterStyle.less'
-var classNames = require('classnames');
 class FilterSelect extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +21,7 @@ class FilterSelect extends React.Component {
             code:code,
             name:name
         }
-        code==''?this.classState.nolimit=true:this.classState.nolimit=false;
+        code===''?this.classState.nolimit=true:this.classState.nolimit=false;
         this.classState.select.code=code;
         this.props.changeOption(obj);
 

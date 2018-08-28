@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter} from 'react-router-dom';
+import {Router} from 'react-router-dom';
 import history from './history';
 import App from './APP'
 import registerServiceWorker from './registerServiceWorker';
@@ -8,9 +8,9 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 ReactDOM.render(
     <Provider store={store}>
-        <HashRouter history={history}>
+        <Router history={history}>
            <App/>
-        </HashRouter>
+        </Router>
     </Provider>
         ,document.getElementById('root')
 );
